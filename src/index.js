@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "normalize-css";
+import "./css/styles.css";
 
+// Components
 import App from "./App";
+import { NamesProvider } from "./providers/names";
+import { AppStateProvider } from "./providers/app-state";
 
-const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NamesProvider>
+      <AppStateProvider>
+        <App />
+      </AppStateProvider>
+    </NamesProvider>
   </React.StrictMode>,
-  rootElement
+  document.getElementById("root")
 );

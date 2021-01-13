@@ -1,11 +1,29 @@
 import React from "react";
-import "./styles.css";
 
-export default function App() {
+import { Footer } from "./components/footer";
+import { NamePicker } from "./components/name-picker";
+import { ResetSearch } from "./components/reset-search";
+import { Search } from "./components/search";
+import { ShortList } from "./components/short-list";
+
+function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-      <h2>React beginnings...</h2>
-    </div>
+    <>
+      <Search />
+      <NamesContainer />
+      <ResetSearch />
+      <Footer />
+    </>
   );
 }
+
+function NamesContainer() {
+  return (
+    <main>
+      <ShortList />
+      <NamePicker />
+    </main>
+  );
+}
+
+export default App;
